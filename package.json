@@ -1,13 +1,13 @@
 {
-  "name": "tutorial1",
+  "name": "Projeto NoSql",
   "version": "1.0.0",
-  "description": "Primer tutorial de node js",
+  "description": "MongoDB + nodeJS",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jonathan",
-  "license": "ISC",
+  "author": "Felipe",
+  "license": "",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
