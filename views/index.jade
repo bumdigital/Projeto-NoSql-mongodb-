@@ -1,0 +1,50 @@
+extends ./layout.jade
+block contenido
+  div(class="col-md-4")
+  div(class="col-md-4")
+    h1.text-center Usuarios
+    .container
+      .table-responsive
+        table.table.table-border.table-hover(style="width:65%")
+            thead.text-center
+              tr.info
+                th #
+                th Nome
+                th Idade
+                th Email
+                th Ação
+              
+            tbody
+              -var count = 1
+              for i in usuarios 
+                tr
+                  td= count++
+                  td= i.username
+                  td= i.age
+                  td= i.email
+                  td.text-center
+                    input(type ="button" class="btn btn-danger" value="Excluir Usuário" onclick= "location.href='/delete?username=#{i.username}';")
+    
+    hr
+    
+    form(action="/", method = "POST")
+      h1.text-center.big-top-space Cadastrar novo usuário
+      
+      div
+        label(for = "name") Nome
+        input(type = "text", name ="name", placeholder="Seu nome...", id="name", class ="form-control")
+      div
+        label(for="username") username
+        input(type = "text", name ="username", placeholder="Seu username...", id="username", class ="form-control")
+      div
+        label(for="age") Idade
+        input(type = "text", name ="age", placeholder="Sua idade...", id="age", class ="form-control")
+      div
+        label(for="email") Email
+        input(type = "text", name ="email", placeholder="Seu e-mail...", id="uemail", class ="form-control")
+      div
+        label(for="sex") Sexo
+        input(type = "text", name ="sex", placeholder="M ou F", id="sex", class ="form-control")  
+      div(class="row top-space big-top-space")
+        div
+          input(type = "submit", value="Cadastrar" , class ="btn btn-info center-block")
