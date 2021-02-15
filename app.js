@@ -29,7 +29,7 @@ app.post("/", function(req,res){
     res.redirect("/");
   },function(err){
     console.log(String(err));
-    res.send("No pudimos guardar la información");
+    res.send("Não foi possível salvar as informações");
   });
 });
 
@@ -38,9 +38,11 @@ app.get("/delete", function(req,res){
     res.redirect("/");
   }, function(err){
     console.log(String(err));
-    res.send("No pudimos eliminar el usuario");
+    res.send("Não foi possível excluir o usuário");
   });
 });
 
 
-app.listen(8080);
+app.listen(8080, function() {
+  console.log('Servidor conectado na porta 8080!');
+});
